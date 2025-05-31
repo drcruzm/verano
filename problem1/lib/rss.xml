@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[manuscript]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>manuscript</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sat, 31 May 2025 22:08:13 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sat, 31 May 2025 22:08:13 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Problema de Simulación de Evento Discreto para una Refaccionaria]]></title><description><![CDATA[ 
+ <br><br>Una refaccionaria tiene un sistema de atención al cliente con dos servidores: uno para ventas de refacciones y otro para servicio técnico.<br>
+Los clientes llegan a la refaccionaria con diferentes frecuencias dependiendo del tipo de servicio que requieren.<br><br>Simular el sistema de atención al cliente en la refaccionaria durante un período de 8 horas y evaluar el desempeño del sistema en términos de tiempo de espera promedio y utilización de los servidores.<br><br>
+<br>Frecuencia de llegada de clientes para ventas de refacciones: distribución Poisson con tasa promedio de 5 clientes por hora.
+<br>Frecuencia de llegada de clientes para servicio técnico: distribución Poisson con tasa promedio de 3 clientes por hora.
+<br>Tiempo de atención para ventas de refacciones: distribución exponencial con media de 10 minutos.
+<br>Tiempo de atención para servicio técnico: distribución normal con media de 30 minutos y desviación estándar de 5 minutos.
+<br>Número de servidores: 2 (uno para ventas de refacciones y otro para servicio técnico).
+<br>Política de atención: primero en llegar, primero en ser atendido (FIFO).
+<br><br>
+<br>Tiempo de espera promedio para clientes de ventas de refacciones.
+<br>Tiempo de espera promedio para clientes de servicio técnico.
+<br>Utilización del servidor de ventas de refacciones.
+<br>Utilización del servidor de servicio técnico.
+<br><br>
+<br>Simular el sistema durante 8 horas.
+<br>Calcular las variables de salida solicitadas
+<br>Analizar los resultados y proporcionar recomendaciones para mejorar el desempeño del sistema.
+<br><br>
+<br>¿Cuál es el tiempo de espera promedio para cada tipo de cliente?
+<br>¿Cuál es la utilización de cada servidor?
+<br>¿Qué cambios se podrían implementar para reducir los tiempos de espera y mejorar la utilización de los servidores?
+]]></description><link>simio\refaccionaría.html</link><guid isPermaLink="false">Simio/Refaccionaría.md</guid><pubDate>Sat, 31 May 2025 21:57:57 GMT</pubDate></item></channel></rss>
