@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidad 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Estilo para asegurar que el iframe ocupe el contenedor */
+      .iframe-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        /* padding-top: 62.25%; /* Descomentar si se prefiere mantener una proporción específica */
+        height: 70vh; /* Altura del 80% del viewport, ajustable según preferencia */
+      }
+      .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      /* Fuente Inter */
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-orange-300 via-amber-200
+     to-yellow-100 text-orange-800 flex flex-col min-h-screen"
+  >
+    <header
+      class="bg-orange-200/80 shadow-lg backdrop-blur-md sticky top-0 z-50"
+    >
+      <div class="container mx-auto px-6 py-6 text-center">
+        <h1
+          class="text-4xl font-bold text-transparent bg-clip-text
+           bg-gradient-to-r from-orange-600 to-amber-500"
+        >
+          Modelos de Simulación 1 a 3
+        </h1>
+  
+      </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div
+        class="bg-white/70 p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl backdrop-blur-md"
+      >
+        <h2 class="text-2xl font-semibold mb-3 text-orange-600">
+          Aprendiendo a simular con Simio
+        </h2>
+        
+        <div
+          class="iframe-container rounded-lg overflow-hidden border border-orange-400"
+        >
+          <iframe
+            title="Problemas 1 a 3"
+            src="https://sway.cloud.microsoft/s/kNcozsyPkB6yI0iq/embed"
+            allowfullscreen="true"
+          >
+          </iframe>
+        </div>
+        <p class="text-xs text-orange-500 mt-4 text-center">
+          Material de apoyo para el 1er Examen Parcial.
+        </p>
+      </div>
+    </main>
+
+    <footer class="bg-orange-200/80 shadow-top mt-auto">
+      <div
+        class="container mx-auto px-6 py-4 text-center text-orange-700 text-sm"
+      >
+        &copy; <span id="currentYear"></span> Dr. Victor Cruz. Todos
+        los derechos reservados.
+        <p>1er Examen Parcial.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Script para el año actual en el pie de página
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      // Pequeña mejora: Mensaje si el iframe no se puede cargar (detección básica)
+      const iframe = document.querySelector("iframe");
+      if (iframe) {
+        // Asegurarse de que el iframe existe antes de añadir listeners
+        iframe.onload = function () {
+          console.log("Informe de Power BI cargado.");
+        };
+        iframe.onerror = function () {
+          console.error("Error al cargar el informe de Power BI.");
+          // Mostrar un mensaje más visible al usuario
+          const mainContent = document.querySelector("main > div"); // Selecciona el div principal del contenido
+          if (mainContent) {
+            let errorMessage = mainContent.querySelector(
+              ".error-message-iframe"
+            );
+            if (!errorMessage) {
+              // Crear el mensaje solo si no existe ya
+              errorMessage = document.createElement("p");
+              errorMessage.textContent =
+                "Hubo un problema al cargar el informe. Por favor, inténtalo de nuevo más tarde o revisa la consola para más detalles.";
+              // Clases para el estilo del error, ajustadas a la paleta clara
+              errorMessage.className =
+                "text-red-600 text-center mt-4 p-3 bg-red-100 border border-red-300 rounded-md error-message-iframe";
+              // Insertar el mensaje después del contenedor del iframe
+              const iframeContainer =
+                mainContent.querySelector(".iframe-container");
+              if (iframeContainer && iframeContainer.parentNode) {
+                iframeContainer.parentNode.insertBefore(
+                  errorMessage,
+                  iframeContainer.nextSibling.nextSibling
+                ); // después del <p> existente
+              }
+            }
+          }
+        };
+      } else {
+        console.error("No se encontró el elemento iframe en la página.");
+      }
+    </script>
+  </body>
+</html>
